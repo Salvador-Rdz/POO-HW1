@@ -24,7 +24,7 @@ public class item {
         this.cost=0;
         this.inStock=0;
    }
-    public item(int sku, int inStock, double price, double cost, String description)
+    public item(int sku, double price, String description)
     {
         this.sku=sku;
         this.inStock=inStock;
@@ -92,7 +92,6 @@ public class item {
     {
         this.inStock+=itPurchased;
         this.cost=cost;
-        System.out.println("InStock changed to: "+inStock+" and cost changed to: "+cost);
     }
     public boolean sale(int toSell)
     {
@@ -103,7 +102,6 @@ public class item {
         }
         else
         {   int sold=this.inStock-toSell;
-            System.out.println("Sale was successfull."+"Stock went from: "+this.inStock+" to: "+sold);
             this.inStock-=toSell;
             return true;
         }
@@ -112,9 +110,8 @@ public class item {
     {
         return inStock;
     }
-    public void upPrice(int newPrice)
+    public void upPrice(double newPrice)
     {
         this.price=newPrice;
-        System.out.println("Price changed to: "+newPrice);
     }
 }
