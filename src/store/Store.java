@@ -15,31 +15,24 @@ public class Store {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("----- Custom item test ------");
-        //Custom item
-        item newItem = new item(102,5,12,8,"Coca-Cola");
-        System.out.println("SKU = "+newItem.getSku());
-        System.out.println("In stock = "+newItem.getinStock());
-        System.out.println("Price = "+newItem.getPrice());
-        System.out.println("Cost = "+newItem.getCost());
-        System.out.println("Description = "+newItem.getDescription());
-        System.out.println("This item's stock is: "+newItem.checkStock());
-        System.out.println("-------- Default item test ------");
-        //Default item
-        item otherItem = new item();
-        System.out.println("SKU = "+otherItem.getSku());
-        System.out.println("In stock = "+otherItem.getinStock());
-        System.out.println("Price = "+otherItem.getPrice());
-        System.out.println("Cost = "+otherItem.getCost());
-        System.out.println("Description = "+otherItem.getDescription());
-        System.out.println("This item's stock is: "+otherItem.checkStock());
-        System.out.println("--------- Method Tests --------");
-        //item methods
-        otherItem.purchase(1, 2); //Will add 1 to the stock
-        otherItem.sale(5);    //Will print an error, since there's more than the one in the default's stock.
-        System.out.println("Items in stock: "+otherItem.checkStock()); //Worth to mention, there's 1 in stock now.
-        otherItem.upPrice(14); //Will change the price to 14.
-        System.out.println("New Price = "+otherItem.getPrice());
-    }
-    
+        //Instancia de la clase Artículo
+        item telefono = new item (120899,11500.00,"Iphone 6s 16Gb");
+        //Compra de 50 teléfonos
+        telefono.purchase(50, 9890.00);
+        //Muestra la existencia en almacén
+        System.out.println("La existencia en almacén del artículo es " + 
+                            telefono.checkStock());
+        //Se realiza una venta
+        System.out.println("Se venden 15 teléfonos");
+        telefono.sale(15);
+        System.out.println("La nueva existencia después de la venta es "+
+                            telefono.checkStock());
+        //Se realiza actualización de precios
+        System.out.println("Hay una promo, y el nuevo precio es $10,000.00");
+        telefono.upPrice(10000.00);
+    } 
 }
+
+    
+    
+
